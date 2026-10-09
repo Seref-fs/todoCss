@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        to bottom,
+        #ffc1c1,
+        #ff8589
+    );
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.todo-container {
+    width: 635px;
+    min-height: 270px;
+    margin-top: 20px;
+    padding: 20px 30px;
+
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+    animation: flyBounce 1s ease-out both;
+}
+@keyframes flyBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(15px);
+    }
+    75% {
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.todo-container h1 {
+    opacity: 0;
+    animation: textAppear 0.6s ease forwards;
+    animation-delay: 0.8s;
+    font-family: georgia, serif;
+    font-size: 60px;
+    line-height: 1.2;
+    font-weight: bold;
+    margin-bottom: 18px;
+    color: black;
+}
+.todo-input {
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    opacity: 0;
+    animation: textAppear 0.6s ease forwards;
+    animation-delay: 0.8s;
+}
+.completed {
+    text-decoration: line-through;
+    color: grey;
+    margin-bottom: 40px;
+    font-size: 30px;
+    font-family: Franklin Gothic Medium;
+}
+
+@keyframes textAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#newList li {
+    font-family: franklin gothic medium;
+    font-size: 30px;
+    animation: fadeInUp 0.5s ease-out both;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#newList li:hover {
+    text-decoration: line-through;
+    color: black;
+}
+
+#errorMsg {
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    margin-top: 12px;
+    animation: blink 0.5s infinite;
+}
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+ul, ol {
+    list-style: none;
+}
+
+#input1 {
+    font-family: Franklin Gothic Medium;
+    font-size: 30px;
+    border: 2px solid grey;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+#input1:focus {
+    border-color: blue;
+}
+
+.todo-input button {
+    font-size: 25px;
+    padding: 2px 15px;
+}
+
